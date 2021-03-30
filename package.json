@@ -1,10 +1,10 @@
 {
   "name": "tinyimg-cli",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "帮你自动将图片上传到tinypng进行压缩下载",
   "main": "index.js",
   "bin": {
-    "tinyimg": "./bin/tinyimg.js"
+    "spress": "./bin/tinyimg.js"
   },
   "scripts": {
     "start": "tinyimg",
@@ -25,6 +25,8 @@
   },
   "homepage": "https://github.com/PaulChess/tinyimg-cli#readme",
   "dependencies": {
-    "liftoff": "^3.1.0"
+    "commander": "^7.2.0",
+    "liftoff": "^3.1.0",
+    "minimist": "^1.2.5"
   }
 }
