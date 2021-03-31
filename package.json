@@ -1,6 +1,6 @@
 {
   "name": "hxm-compress-img",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "帮你自动将图片上传到tinypng进行压缩下载",
   "main": "index.js",
   "bin": {
