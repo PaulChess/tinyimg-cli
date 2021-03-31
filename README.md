@@ -1,53 +1,27 @@
-# tinyimg-cli
-帮你自动完成图片压缩的cli
+# hxm-compress-img
+基于tinypng.com帮你自动完成图片压缩的node-cli
 
-
-## 目标
-* 上传图片
-* 删除(重命名)图片
-* 下载图片到本地
+### 目标
 * cli指令化调用
-* 支持设置压缩次数
-* 跳过tinyimg官网上的次数限制
-
-## 技术方案
 * 上传、下载调用tinypng接口
-* fs覆盖写入图片文件更新
-* 支持配置压缩次数
-* 随机xff头跳过数量限制
+* 随机xff头跳过tinyimg官网上的次数限制
 
-## 使用说明
+### 使用
+1. 全局安装
 ```javascript
-// 下载rmb指令工具, 就是我们这个脚手架
-npm i tinypng-com-cli -g
-```
-### 压缩单张图片
-```javascript
-tinyimg ${imgPath}
+npm install -g hxm-compress-img
 ```
 
-### 压缩整个图片目录
+2. 压缩一张图片
 ```javascript
-tinyimg ${imgDirPath}
+// `hxm-compress-img`后面跟的是图片路径
+hxm-compress-img ./assets/flower.png
 ```
 
-### 设置压缩次数
+3. 压缩一整个图片文件夹
 ```javascript
-tinyimg ${imgDirPath} -c 3 // 压缩三遍
+// `hxm-compress-img后面跟的是图片文件夹路径`
+hxm-compress-img ./assets
 ```
 
-### 递归处理图片中的目录
-```javascript
-tinyimg ${imgDirPath} -d
-```
-
-
-package.json:
-"bin": {
-  "tinyimg": "./bin/tinyimg.js"
-},
-
-tinyimg命令对应的可执行文件为 bin/tinyimg.js。
-npm会寻找这个文件，在node_modules/.bin
-
-上面代码指定，someTool 命令对应的可执行文件为 bin 子目录下的 someTool.js。Npm会寻找这个文件，在node_modules/.bin/目录下建立符号链接。在上面的例子中，someTool.js会建立符号链接node_modules/.bin/someTool。由于node_modules/.bin/目录会在运行时加入系统的PATH变量，因此在运行npm时，就可以不带路径，直接通过命令来调用这些脚本。
+注意: 由于`tinypng`支持上传`png`和`jpg`的图片，压缩时其他文件后缀都会被过滤。图片后缀请提前处理。
