@@ -1,13 +1,13 @@
 {
-  "name": "tinyimg-cli",
+  "name": "hxm-compress-img",
   "version": "0.0.2",
   "description": "帮你自动将图片上传到tinypng进行压缩下载",
   "main": "index.js",
   "bin": {
-    "spress": "./bin/tinyimg.js"
+    "hxm-compress-img": "./bin/tinyimg.js"
   },
   "scripts": {
-    "start": "tinyimg",
+    "start": "hxm-compress-img",
     "test": "jest"
   },
   "repository": {
