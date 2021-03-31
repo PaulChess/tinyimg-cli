@@ -1,16 +1,18 @@
 #!/usr/bin/env node
+
 /**
  * @author shenjiaqi
  * @date 2021-03-30
  * @description 图片压缩入口程序
  */
-
 const Liftoff = require('liftoff');
 const argv = require('minimist')(process.argv.slice(2));
 const version = require('../package.json').version;
 const commander = require('commander');
 const { exec } = require('child_process');
-console.log(process.argv.slice(2));
+const tinyImg = require('../command/tinyimg');
+// 依赖的基础库
+require('../lib/index');
 
 const cli = new Liftoff({
   name: 'spress',
@@ -22,7 +24,7 @@ const cli = new Liftoff({
 })
 
 class App {
-  register(commander, argv) {
+  register(commander, argv, env) {
     commander.version(version, '-v, --version');
     if (argv._.length === 0) {
       exec('tinyimg --help', (err, info) => {
@@ -36,7 +38,7 @@ class App {
         .option('-d, --deep', 'deeploop director', '');
     // action
     program.action(() => {
-      console.log('action');
+      tinyImg(argv, env, program);
     });
     commander.parse(process.argv);
   }

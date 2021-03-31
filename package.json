@@ -25,8 +25,12 @@
   },
   "homepage": "https://github.com/PaulChess/tinyimg-cli#readme",
   "dependencies": {
+    "chalk": "^4.1.0",
     "commander": "^7.2.0",
+    "figures": "^3.2.0",
     "liftoff": "^3.1.0",
-    "minimist": "^1.2.5"
+    "lodash": "^4.17.21",
+    "minimist": "^1.2.5",
+    "trample": "^0.2.3"
   }
 }
